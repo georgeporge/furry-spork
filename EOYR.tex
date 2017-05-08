@@ -1,81 +1,57 @@
 \documentclass[a4paper,11pt]{article}
 
-% With the commands after % signs you can define your own page size. Remove % to activate them and insert the values you want to define the size of the page you want.
-    %\voffset=-2cm
-    %\hoffset=-0.5cm
-    %\textwidth=15cm
-    %\parindent 0pt
-    %\parskip 2ex
-\setlength{\parindent}{24pt}
-\setlength{\oddsidemargin}{-5mm}
-\setlength{\evensidemargin}{-5mm}
-\setlength{\textwidth}{165mm}
-\setlength{\textheight}{230mm}
-\setlength{\topmargin}{-10mm}
-\setlength{\marginparwidth}{15mm}
-\setlength{\marginparsep}{7mm}
-%\setlength{\cftsecnumwidth}{2.3cm}
-
-
 \usepackage{datetime}
 \usepackage{graphicx,natbib}
 \usepackage{gensymb}
 \usepackage[colorinlistoftodos]{todonotes}
 \usepackage{titling}
-%provide smart links in your document
 \usepackage{hyperref}
+\usepackage{fancyhdr}
+\usepackage{lipsum}
+\usepackage{geometry}
 
 \newcommand{\subtitle}[1]{%
   \posttitle{%
     \par\end{center}
     \begin{center}\large#1\end{center}
     \vskip0.5em}%
-}
-
-% use double spacing for easy markup on the document for corrections
-%\usepackage{setspace}
-%\doublespacing
-
-\newcommand{\tick}{\ding{51}}
-\newcommand{\cross}{\ding{55}}
-
-\newcommand\T{\rule{0pt}{3.5ex}}       % Top strut
-\newcommand\B{\rule[-2.3ex]{0pt}{0pt}} % Bottom strut
-
+    }
 \newdateformat{mydate}{%
     \monthname[\THEMONTH] \THEYEAR%
     }
+\newcommand\td[1]{\textcolor{blue}{#1}}
+
+\pagestyle{fancy}
+
+\title{Understand and Improving the Path of the Gulf Stream in Moderate Resolution Climate Models}
+\subtitle{End of First Year Report}
+\author{Georgina Long \\ Supervisors: Prof. Beth Wingate \& Dr. Mike Bell}
+\date{\mydate\today}
+
 
 \begin{document}
 \bibliographystyle{basic}
-
-% Front matter 
-\title{End of First Year Report}
-\subtitle{Draft}
-\author{Georgina Long}
-
-\date{\mydate\today}
-
 \maketitle
-
 
 \section{Introduction}
 
+\todo{Include Gulf Stream dimensions - or maybe mention if talking about scaling at some point?}
 Ocean eddies are the subject of many ongoing investigations into ocean dynamics. The topic comprises a broad range of smaller-scale dynamics and relationships at varying scales. From energy transfer to blah blah *citations*, researchers are still trying to get a better understanding of the internal dynamics of the ocean. *citations*. Our main focus will be on the area of the Gulf Stream and mainly the interaction and effect of the bathymetry on the separation and subsequent path of the Gulf Stream.
 \todo{Haven't added citations}
 
 \subsection{The impact of an accurately resolved Gulf Stream}
 \begin{itemize}
   \item Impact on other weather events - e.g.  \citep{Scaife2011a}
-  \item Effect on other ocean processes and circulation - "blue spot of death"    %\todo{NW corner. Forntal path to west}
+  \item Effect on other ocean processes and circulation - "blue spot of death"    \todo{NW corner. Forntal path to west}
+  \todo Global warming etc?
 \end{itemize}
-The Gulf Stream is part of the AMOC and is essential to transferring heat from the Gulf of Mexico at lower latitudes towards western and northern Europe. Fundamentally it gives north-western Europe its mild climate and thus has large impacts on the weather and climate as the heat is transferred into the atmosphere. This can have wide ranging effects on weather prediction – notably winter blocking \citep{Scaife2011a} and *other citation* \todo{I'm sure I read about cyclones somewhere - find citation}. Many lower resolution models render an unrealistic Gulf Stream, with the separation from the U.S. coast too far to the South, causing an inaccurate path from this point onwards. This obviously has a knock-on effect as the corresponding sea surface temperatures (SSTs) are much higher/lower than observed in the surrounding areas \citep{Greatbatch2004}\todo{check this is the right citation}. The cold bias in the North West corner of the Atlantic resulting from a poorly placed Gulf Stream has become known as the "blue spot of death" \citep{Gnanadesikan2007} to modellers due to the inaccuracies. The Northern Recirculation Gyre (NRG) interacts with the Gulf Stream and it has been noted by \citep{Zhang2007} and \citep{Ezer2016b}\todo{check this citation} that the representation of the Gulf Stream can have large effects on the energy modelled within the NRG \todo{\& the subtropical gyre too? – check this}. A lethargic NRG subsequently affects the *citations/TODO find out about this* and hence we can see that a poorly resolved Gulf Stream can have much wider implications throughout the model.
+The Gulf Stream is part of the AMOC and is essential to transferring heat from the Gulf of Mexico at lower latitudes towards western and northern Europe. Fundamentally it gives north-western Europe its mild climate and thus has large impacts on the weather and climate as the heat is transferred into the atmosphere. This can have wide ranging effects on weather prediction – notably winter blocking \citep{Scaife2011a} and *other citation* \todo{I'm sure I read about cyclones somewhere - find citation}. Many lower resolution models render an unrealistic Gulf Stream, with the separation from the U.S. coast too far to the South, causing an inaccurate path from this point onwards. This has a knock-on effect as the corresponding sea surface temperatures (SSTs) are much higher/lower than observed in the surrounding areas \citep{Greatbatch2004}\todo{check this is the right citation}. The cold bias in the North West corner of the Atlantic resulting from a poorly placed Gulf Stream has become known as the "blue spot of death" \citep{Gnanadesikan2007} to modellers due to the inaccuracies. \todo{Lead into this a bit better - set up the link to the NRG and explain what it is? or leave this bit to later on} The Northern Recirculation Gyre (NRG) interacts with the Gulf Stream and it has been noted by \citep{Zhang2007} and \citep{Ezer2016b}\todo{check this citation} that the representation of the Gulf Stream can have large effects on the energy modelled within the NRG\todo{interaction between the two rather than one to the other} \todo{\& the subtropical gyre too?}. A lethargic NRG subsequently affects the *blah*\todo{find out about this} and hence we can see that a poorly resolved Gulf Stream can have much wider implications throughout the model.
 
 \subsection{Problems and Restrictions}
-%\begin{itemize}
-%  \item Many people restricted to coarser resolution models due to the cost of high resolution models but need high resolution to get a more accurate Gulf Stream - it's expensive to be accurate
-%  \item We don't understand the smaller processes involved. \citep{Nikurashin2012a}
-%\end{itemize}
+\begin{itemize}
+  \item Many people restricted to coarser resolution models due to the cost of high resolution models but need high resolution to get a more accurate Gulf Stream - it's expensive to be accurate
+  \item We don't understand the smaller processes involved. \citep{Nikurashin2012a}
+\end{itemize}
 Higher resolution models have been shown to provide a more realistic Gulf Stream path *citations*, however this comes at a cost requiring more processing power and thus a higher price for the model. It is generally understood *citations \citep{Nikurashin2012a} etc.* that this improvement is due to the higher resolution models being able to resolve small-scale processes which are lost in the coarser resolution counterparts. \citep{Ezer2016b} suggests that to replicate an accurate Gulf Stream separation, the model not only needed to resolve the Gulf stream but also the northern branches of NRG, the southward slope and shelf currents. \todo{Could the bathymetry cause an unresolved northern branches of NRG?}. *citation* It is also thought that the lack of detailed representation of the bathymetry in key areas play a large role in the unrealistic Gulf Stream path. *citation* posed that it is the interaction with the bathymetry and the consequential small-scale processes which cause the Gulf Stream to split off from the coast at Cape Hatteras and direct it’s path from there. The bathymetry itself can be represented in many different ways and the vertical coordinate system chosen has a large impact on the interaction of the ocean dynamics and the ocean floor. \citep{Ezer2016b} revisited a discussion on different vertical coordinate systems and their effect on the path of the Gulf Stream, though noted that the tested z-coordinate system did not include any partial or shaved cells. \todo{partial \& shaved cells - Mike's paper?}
 
 
@@ -85,11 +61,13 @@ Tell a story up to where we are and what's missing.
 \begin{itemize}
   \item Modelling \& vertical grid systems - include partial cells
   \item Turbulence and bathymetry - understanding the smaller processes (vorticity etc.) \citep{Tansley2001} \citep{Nikurashin2012a}
-  \item Possible relationships/data sets to see the history of the Gulf Stream. (Palaeo?) \citep{Ezer2015}
   \item Inclulde some phenomenology - e.g. bottom vortex stretching and bottom pressure torque. Maybe also the weird sandwhich diagram!
+  \item Include context of climate modelling (e.g. Scaife et al, Ezer summary etc)
+  \item context of what affects the Gulf Stream etc.
+  \item Possible relationships/data sets to see the history of the Gulf Stream. (Palaeo?) \citep{Ezer2015}
+  \item Cut down lit review - parts of it will be elsewhere!! (or should be! OR Remove them from elsewhere to keep them here!!)
 \end{itemize}
 
-Cut down lit review - parts of it will be elsewhere!! (or should be! OR Remove them from elsewhere to keep them here!!)
 
 \section{Lit Review as is.... Need to update it /TODO{update!!}}
 
@@ -176,9 +154,7 @@ Many of the theories of smaller-scale processes come with proposed parametrisati
 We have discussed the ideas and challenges facing researchers when trying to understand and improve the model of the Gulf Stream. A combination of physical processes, their causes and ultimate representation in ocean models holds the key to accurately reproducing the separation and path of the Gulf Stream. This topic continues to inspire lots of research into the areas of ocean eddies, bathymetric interaction and model configurations, as more accurate simulations and higher levels of understanding lie in the future
 
 
-
-
-\section{Results}
+\section{Barotropic Vorticity Diagnostics}
 
 Results so far - link into Background \& lead nicely into the next section.
 \subsection{Barotropic vorticity diagnostics}
@@ -190,9 +166,33 @@ Results so far - link into Background \& lead nicely into the next section.
   \item Should probably include model set up
 \end{itemize}
 
+Blhablha don't know how to start this section lalala!
+Using the NEMO model, we are in the process of including some barotropic vorticity diagnostics to further investigate the processes effecting the path of the Gulf Stream. These barotropic vorticity diagnostics have been used by \citep{Bell1991},\citep{Gula???} and \td{other people} to examine \td{who knows what}. The momentum equations in the model are \td{momentum equations and terms}. Two diagnositcs will be calculated on each of the \td{XX} terms.
+For each contribution to the momentum equations, we will first calculate the vertical integrals, $\bar{u}$ and $\bar{v}$, over the height of the water column from the depth, $-h$, to the sea surface level $\eta$,
+\begin{equation}
+	\bar{u} = \int_{-h}^{\eta} u dz ,\qquad \bar{v} = \int_{-h}^{\eta} v dz 
+\end {equation}
+
+We will also calculate the vertical averages $\langle\bar{u}\rangle$ and $\langle\bar{v}\rangle$ over the height of the water column, 
+\begin{equation}
+	\langle\bar{u}\rangle = \frac{1}{\eta + h}\int_{-h}^{\eta}u dz ,\qquad \langle\bar{v}\rangle = \frac{1}{\eta + h}\int_{-h}^{\eta}v dz
+\end{equation}
+The first diagnostic will be obtained by taking \td{the vertical component of}\todo{check this} the curl.
+\td{EQUATION}
+\begin{equation}
+	BVI(a) = \frac{\partial \bar{v}}{\partial x} - \frac{\partial \bar{u}}{\partial y}
+\end{equation}
+The second diagnostic is obtained by taking the vertical average of the momentum contribution over the depth \td{H} of th ocean and then taking \td{the vertical component of}\todo{check this} the curl. \todo{find a better wording of this!}
+\begin{equation}
+	BVA(a) = \frac{\partial \langle\bar{v}\rangle}{\partial x} - \frac{\partial \langle\bar{u}\rangle}{\partial y}
+\end{equation}
+	Using these diagnostics, we can calculate the barotropic \td{and lots of other things}\todo{find out what!!} streamfunction which will help to pinpoint \td{blahblahblah}.
+	\td{Go into each of the contributing factors - put the equation maybe? or at least pick them out from above - look at Mike's paper for help!!}
 
 
 \section{Future Aims/Questions}
+
+\todo{Merge with next section}
 
 We seek a robust \& accurate Gulf Stream path. How can we improve the representation \& thus understanding of the Gulf Stream?
 
@@ -241,6 +241,10 @@ The many different ocean and OGCM models available allow us to see the effects o
     \item Nested grids (enhancing resolution in specific areas?) 
   \end{itemize}
 \end{itemize}
+
+\todo{Diagnostics across different model resolutions and schemes}
+\todo{Can't think of the other thing that was in my head earlier}
+\todo{compare vertical coords?}
 
 To examine the aforementioned interplay between the NRG and the path of the Gulf Stream, a simple configuration of NEMO simulating the double gyre set-up seen by the NRG north of the Gulf Stream and the subropical(?) gyre south of the gulf stream could be used to examine the effects in an idealised model. Results from this could help to influence our investigations within the more realistic models. As \citep{Tansley2001} used the classic problem of flow past a cylinder to understand the Gulf Stream separation, we too can learn from idealised set up and by breaking the problem down to its fundamental aspects.
 
