@@ -1,0 +1,45 @@
+\documentclass[..\EOYR.tex]{subfiles}
+
+\begin{document}
+
+\section{Barotropic Vorticity Diagnostics}
+
+Results so far - link into Background \& lead nicely into the next section.
+\subsection{Barotropic vorticity diagnostics}
+\begin{itemize}
+  \item Results so far
+  \item Discussion on results and possible implications
+  \item Results on what we're looking at and why
+  \item Maybe brief description of JEBAR etc. to explain it's use \& who else has used it to show what - e.g. why are we looking at it etc?
+  \item Should probably include model set up
+\end{itemize}
+
+Blhablha don't know how to start this section lalala!
+Using the NEMO model, we are in the process of including some barotropic vorticity diagnostics to further investigate the processes effecting the path of the Gulf Stream. These barotropic vorticity diagnostics have been used by \citep{Bell1991},\citep{Gula???} and \td{other people} to examine \td{who knows what}. The momentum equations in the model are \td{momentum equations and terms}. Two diagnositcs will be calculated on each of the \td{XX} terms. \td{Better wording from Mike's paper: the curl can be taken of the terms in the vertical average/integral of the momentum equations.}
+For each contribution to the momentum equations, we will first calculate the vertical integrals, $\bar{u}$ and $\bar{v}$, over the height of the water column from the depth, $-h$, to the sea surface level $\eta$,
+\begin{equation}
+	\bar{u} = \int_{-h}^{\eta} u dz ,\qquad \bar{v} = \int_{-h}^{\eta} v dz 
+\end {equation}
+
+We will also calculate the vertical averages $\langle\bar{u}\rangle$ and $\langle\bar{v}\rangle$ over the height of the water column, 
+\begin{equation}
+	\langle\bar{u}\rangle = \frac{1}{\eta + h}\int_{-h}^{\eta}u dz ,\qquad \langle\bar{v}\rangle = \frac{1}{\eta + h}\int_{-h}^{\eta}v dz
+\end{equation}
+The first diagnostic will be obtained by taking \td{the vertical component of}\todo{check this} the curl.
+\td{EQUATION}
+\begin{equation}
+	BVI(a) = \frac{\partial \bar{v}}{\partial x} - \frac{\partial \bar{u}}{\partial y}
+\end{equation}
+The second diagnostic is obtained by taking the vertical average of the momentum contribution over the depth \td{H} of th ocean and then taking \td{the vertical component of}\todo{check this} the curl. \todo{find a better wording of this!}
+\begin{equation}
+	BVA(a) = \frac{\partial \langle\bar{v}\rangle}{\partial x} - \frac{\partial \langle\bar{u}\rangle}{\partial y}
+\end{equation}
+	Using these diagnostics, we can calculate the barotropic \td{and lots of other things}\todo{find out what!!} streamfunction which will help to pinpoint \td{blahblahblah}.
+	\td{Go into each of the contributing factors - put the equation maybe? or at least pick them out from above - look at Mike's paper for help!!}
+
+	ln_zps=true : z-coordinate with partial step bathymetry
+
+	\subsection{Bottom Pressure Torque}
+	\subsection{Vortex Stretching}
+
+\end{document}
