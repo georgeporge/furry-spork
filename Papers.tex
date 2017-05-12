@@ -1,0 +1,50 @@
+\documentclass[a4paper,11pt]{article}
+
+\usepackage{subfiles}
+\usepackage{datetime}
+\usepackage{graphicx,natbib}
+\usepackage{gensymb}
+\usepackage{titling}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\usepackage{lipsum}
+\usepackage{geometry}
+\usepackage[colorinlistoftodos]{todonotes}
+
+%\presetkeys{todonotes}{inline}{}
+\colorlet{BLUE}{blue} %to allow \td in headings
+
+\newcommand{\subtitle}[1]{%
+  \posttitle{%
+    \par\end{center}
+    \begin{center}\large#1\end{center}
+    \vskip0.5em}%
+    }
+\newdateformat{mydate}{%
+    \monthname[\THEMONTH] \THEYEAR%
+    }
+\newcommand\td[1]{\textcolor{blue}{#1}}
+
+\pagestyle{fancy}
+
+\title{Paper summaries and notes}
+\author{Georgina Long}
+\date{\mydate\today}
+
+
+\begin{document}
+\bibliographystyle{basic}
+\maketitle
+
+
+\subfile{papers/Scaife2011a.tex}
+
+\subfile{papers/Greatbatch1991.tex}
+
+
+
+\bibliography{../../../../bibtex/EoFYR}
+%TODO merge bib files
+
+
+\end{document}

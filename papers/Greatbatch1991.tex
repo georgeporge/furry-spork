@@ -1,0 +1,106 @@
+\documentclass[..\Papers.tex]{subfiles}
+
+\begin{document}
+
+\section{Greatbatch1991}
+\citep{Greatbatch1991}
+
+
+\begin{itemize}
+    \item Importance of JEBAR (mentioned in Section 3)
+    \item GS transport decreases for ~80Sv to ~50Sv from 1955-1959 to 1970-1974
+    \item Transport stream function for climatological mean state with JEBAR set to 0 is very different. Transport stream function for climatological mean state with WIND set to 0 is very similar. Implies that JEBAR give significant contribution.
+    \item 1\degree model solving for streamfunction.
+    \item Equations showing BPT \& sverdrup relation in section 4
+    \item "It is also apparent that there is significant bottom pressure torque forcing to the south-east of the Gand Banks of Newfoundland and that this, together with that enhancing the transport of the subtropical gyre, is important for determining the maximum transport (~80 Sv) of the diagnosed Gulf Stream. Indeed, it can be seen from Figure 6 that bottom pressure torque alone accounts for over 70Sv of this transport." (after eqn (21)).
+    \item Figures 5 \& 6 support the views from Wunsch and Roemich (1985) that transport in the North Atlantic driven by bottom pressure torque is likely of comparable magnitude to that driven by the surface wind stress curl. Similar magnitudes of $\Psi_B$ and $\Psi_S$ in figs 5 \& 6 support this.
+    \item Eqn(25) shows that the JEBAR differs from the bottom pressure torque by a term that is the corresponding torque associated with the vertically averaged pressure.
+    \item Fig 1 \& 5 differences show the effect of bottom pressure torque missing from modles which assume a flat bottom. Eqns also demonstrate (16) \& (17) onwards.  (though note fig 5 soln doesn't include the effect of friction - but friction only essential in palaces where $\frac{f}{H}$ contours terminate - pg6). See below for eqns.
+    \item Splits the stream function into different parts.(By Eqn (21) \& elsewhere) $\Psi_S$ and $\Psi_B$ with $\Psi_B = \Psi - \Psi_s$. Fig 6 shows $\Psi_B$ the part of fig 1 driven by bottom pressure torque. BPT accounts for over 70Sv of GS transport alone.
+    \item Can see that the effects of bpt can displace the subpolar gyre southward - big impact on British Isles.\todo{Include this in intro? Links to importance}
+    \item P10 explains why JEBAR so important in NE Atlantic. Verift importance by overlaying contours of potential energy $\Phi$ and depth $H$. As $JEBAR=J(\Phi,\frac{1}{H})$ it will be nonzero in regions where these regions cross. The NE Atlantic is one such region. 
+    \item For subtropical gyre - bottom pressure torque effect more important than density compensation.
+    \item Change between pentads due to JEBAR dominates that due to WIND. (Section 4)
+    \item Change in bpt between pentads is responsible for the weaker subtropical gyre and the increased $\Psi$ values along 41\degree N and 28\degree W latitude to the west. These two combined accound for a 45Sv transport reduction around 40\degree N - explaining the ~35Sv reduction in the Gulf Stream.
+    \item In subpolar gyre - bpt responsible for shiting the SE part Nward but no change in transport.
+    \item When looking at changes to $\Phi$ above 1500m only - and calculating the $\Psi$ due to these changes, it accounts for roughly half of the total $\Psi$ and approx 24Sv transport in the Gulf Stream region.
+
+    \item Transport of GS is 30Sv less for 70-74 than 55-59. 20Sv of this is due to a dramatic decrease in the strength of the subtropical gyre. This 20Sv is due to a change in bottom pressure torque forcing on the W side of the Mid-Atlantic Ridge (nr 35\degree N and 28\degree W). The remaining 10Sv is due to changes in bottom presure torque in the Eastern Atlantic (nr 41\degree N and 28\degree W). About half is due to changes in the density field in depe water below 1500m - this may be unreliable but the remaining half (above 1500m) is reliable \& still significant.
+    \item JEBAR split in two: a part associated with the bottom pressure torque \& a part associated with the compensation by the density stratification for the effect of variable bottom topography. -> This leads to the split of the streamfunction (See below).
+    \item JEBAR separation leads to $\Psi$ split: $\Psi = \Psi_W + \Psi_C + \Psi_B$. $\Psi_W$ - uniform density ocean. $\Psi_C$ - driven by density compensation part of JEBAR. $\Psi_B$ - driven by bottom pressure torque. $\Psi_S = \Psi_W+\Psi_C$ is the prediction of the flat-bottomed Sverdrup relation.
+    \item subpolar gyre affected by $\Psi_C$ and $\Psi_B$ (with the latter extending the gyre southward rather than enhancing circulation).
+    \item subtropical gyre afected by $\Psi_W$ and $\Psi_B$ (with the latter leading to enhanced gyre circulation).
+    \item Nearly all changes between tthe two pentads is due to the bpt part of $\Psi$ ($\Psi_B$).
+    \item Calculation of $\Psi_B$ depends on $\Psi_S$ and thus on the quality o the surface wind stress fields.
+\end{itemize}
+
+\paragraph{Explanation of discrepancy between fig 1 \& fig 5}
+That the flat bottom sverdrup relation shows the results of removing the bottom pressure torque.
+\\ Start with momentum equations:
+    \begin {equation} \label{momv}
+        -fv = - \frac{1}{a\rho_0 cos\phi}\frac{\partial p}{\partial \lambda} + \frac{1}{\rho}\frac{\partial \tau_(z\lambda)}{\partial z}
+    \end {equation}
+    \begin {equation} \label{momu}
+        fu = - \frac{1}{a\rho_0}\frac{\partial p}{\partial \phi} + \frac{1}{\rho}\frac{\partial \tau_(z\phi)}{\partial z}
+    \end {equation}
+Vertivally integrate the momentum eqns. Assume bottom stress to be 0 (as when deriving (7) and (8) \todo{check why bottom stress is 0}
+    \begin {equation} \label{vintmomv}
+        -fV = - \frac{1}{a\rho_0 cos\phi}[\frac{\partial}{\partial \lambda} ( \int_(-H)^0 p dz) - p_b H_\lambda ] + \frac{\tau_\lambda^s}{\rho_0}
+    \end {equation}
+    \begin {equation} \label{vintmomu}
+        fU = - \frac{1}{a\rho_0}[\frac{\partial}{\partial \phi}(\int_(-H)^0 p dz) - p_b H_\phi] + \frac{\tau_\phi^s}{\rho_0}
+    \end{equation}
+Now do $\frac{\partial \ref{vintmomu}}{\partial\lambda} = \frac{\partial cos\phi\ref{vintmomv}}{\partial\phi}$ and using:
+    \begin{equation} \label{vintcontinuity}
+        \frac{1}{acos\phi}(\frac{\partial U}{\partial\lambda}+\frac{\partial}{\partial\phi}(Vcos\phi))=0
+    \end {equation}
+and
+    \begin{equation} \label{streamfunction}
+        aU=-\Psi_\phi \\quad aVcos\phi=\Psi_\lambda
+    \end {equation}
+we have:
+    \begin{equation} \label{18}
+        (\frac{df}{d\phi}\Psi_\lambda=\frac{1}{\rho_0}J(p_b,H)+\frac{a}{\rho_0}[\frac{\partial}{\partial\lambda}(\tau_\phi^s)-\frac{\partial}{\partial\phi}(cos\phi\tau_\lambda^s)]
+    \end{equation}
+an alternative way to express \ref{18} is:
+    \begin{equation} \label{19}
+        \beta V = \frac{1}{\rho_0}[\hat{k} \dot curl(p_b\nabla H) + \hat{k}\dot curl(\tau^s)]
+    \end{equation}
+which makes it clear that the $J(p_b,H)$ term in \ref{18} corresponds to the bottom pressure torque $\hat{k}\dot curl(p_b\nabla H)$. and if bpt everywhere is 0 \ref{18} becomes the flat-bottomed Sv relation used to obtain fig 5.
+
+\paragraph{Show relationship between JEBAR and bottom pressure torque}
+Integrate the hydrostatic relation1G
+    \begin{equation} \label{hydrostatic relation}
+        \frac{\partial p}{\partial z} = - \rho_0 b
+    \end {equation}
+to get
+    \begin{equation} \label{int hydro}
+        p = p_b - \rho_0 \int_(-H)^z b dz
+    \end{equation}
+and now integrate vertically to get:
+    \begin{equation} \label{vint int hydro}
+        H(\bar{p} - p_b) = -\rho_0 \int_(-H)^0\int_(-H)^z b dz' dz
+    \end{equation}
+where $\bar{p} = \frac{1}{H}\int_(-H)^0 p dz$. Applying integration by parts to the RHS \& using $\Phi = \int_(-H)^0 zb dz$, \ref{vint int hydro} can be written:
+    \begin{equation}
+        H(\bar{p}-p)=\rho_0\Phi
+    \end{equation}
+        and so using $JEBAR = J(\Phi,\frac{1}{H})$ \td{((10) in paper)} it follows:
+    \begin{equation} \label{JEBAR}
+        JEBAR=\frac{1}{\rho_0 H}[J(p_b,H)-J(\bar{p},H)]
+    \end{equation}
+Hence, JEBAR differs from bpt by a term corresponding to the torque associated with the vertically averaged pressure $\bar{p}$. (Remeber: $\bar{p} = \frac{1}{H}\int_(-H)^0 p dz$)
+
+
+\paragraph{Splitting the Stream function}
+$\Psi$ can be split into two parts: $\Psi_S$ calculated form the flat-bottomed Sverdrup relations and $\Psi_B$ due to the bottom pressure torque. We can futher split $\Psi_S$ into two parts: $\Psi_W$ given by integrating
+    \begin{equation} \label{9}
+        J(\Psi,\frac{f}{H})=JEBAR+WIND
+    \end{equation}
+with $JEBAR=0$ and $\Psi_W$=0 at the eastern boundary. This is the $\Psi$ field for a uniform density ocean. See fig2a.
+$\Psi_C=\Psi_S-\Psi_W$ is then part of $\Psi$ obtained by integrating \ref{9} with $JEBAR=JEBAR_c$ ($JEBAR_c$ is a nonzero $JEBAR$ mentioned in the paper), $WIND=0$ and $\Psi_C=0$ at the Eastern boundary. It is the part of $\Psi$ associated with compensation by the density stratification for the effect of bottom topography.
+        \\Total $\Psi$ is $\Psi = \Psi_W+\Psi_C+\Psi_B$. $\Psi_B+\Psi_C$ is the part driven by JEBAR shown in fig2b. Thus $JEBAR$ can be split into two parts: a part associated with density compensation ($JEBAR_C$) and a part associated with bottom pressure torque ($JEBAR-JEBAR_C$). Each part can be obtained by differentiating the respective streamfunction (i.e. $\Psi_B$ or $\Psi_C$ along $\frac{f}{H}$ contours. \td{NOTE: These two parts don't correspond to the two parts in \ref{JEBAR}}.
+
+
+
+\end{document}
