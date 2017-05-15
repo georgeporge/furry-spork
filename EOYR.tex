@@ -14,16 +14,17 @@
 %\presetkeys{todonotes}{inline}{}
 \colorlet{BLUE}{blue} %to allow \td in headings
 
+\newdateformat{mydate}{%
+    \monthname[\THEMONTH] \THEYEAR%
+    }
 \newcommand{\subtitle}[1]{%
   \posttitle{%
     \par\end{center}
     \begin{center}\large#1\end{center}
     \vskip0.5em}%
     }
-\newdateformat{mydate}{%
-    \monthname[\THEMONTH] \THEYEAR%
-    }
 \newcommand\td[1]{\textcolor{blue}{#1}}
+\newcommand{\ignore}[1]{}
 
 \pagestyle{fancy}
 

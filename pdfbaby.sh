@@ -3,7 +3,7 @@
 #check the status of the last call
 function err () {
     banner "MEEP MEEP!!"
-    echo "Uh oh. $1"
+    echo "Uh oh. $1" >&2
     exit 1
 }
 
@@ -14,16 +14,27 @@ function check_err {
     fi
 }
 
-if [ -z "$1" ]
+
+FILE=""
+BIB="FALSE"
+
+while getopts ":f:b" opt; do
+    case $opt in
+        b)
+            BIB="TRUE"
+            ;;
+        f)
+            FILE=$OPTARG
+            ;;
+        \?)
+            err "Invalid option -$OPTARG"
+            ;;
+    esac
+done
+
+if [ -z "$FILE" ]
 then
     err "You didn't enter a file Silly!!"
-fi
-
-FILE=$1
-BIB="FALSE"
-if [ ! -z "$2" ]
-then
-    BIB=$2
 fi
 
 if [ -f "$FILE"".tex" ]
