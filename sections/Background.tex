@@ -12,8 +12,7 @@ Tell a story up to where we are and what's missing.
   \item context of what affects the Gulf Stream etc.
   \item Possible relationships/data sets to see the history of the Gulf Stream. (Palaeo?) \citep{Ezer2015}
   \item Cut down lit review - parts of it will be elsewhere!! (or should be! OR Remove them from elsewhere to keep them here!!)
-    \item Bottom Pressure Torque -> JEBAR. JEBAR is part of bottom pressure torque (see Geoff's book \& \citep{Greatbatch1991}. The additional term corresponds to the torque of the vertically averaged pressure (\citep{Greatbatch1991})
-    \item When introducing equations... maybe start with the basic equations then the vector invariant form of the momentum equation etc...????
+  \item When introducing equations... maybe start with the basic equations then the vector invariant form of the momentum equation etc...????
   \item Modelling \& vertical grid systems - include partial cells
   \item Balance between acceleration by wind stress and decelleration by pressure force on bottom topography \citep{NaveiraGarabato2013} - he cites Vallis 2006 (Geoff's book!)??
 \end{itemize}
@@ -37,18 +36,52 @@ Tell a story up to where we are and what's missing.
     \item Include JEBAR
     \item Include Vortex Stretching etc. \citep{Zhang2007}
     \item \citep{Bell1999}
-    \item Bottom Pressure Torque -> JEBAR. JEBAR is part of bottom pressure torque (see Geoff's book \& \citep{Greatbatch1991}. The additional term corresponds to the torque of the vertically averaged pressure (\citep{Greatbatch1991})
+    \item Bottom Pressure Torque to JEBAR. JEBAR is part of bottom pressure torque (see Geoff's book \& \citep{Greatbatch1991}). The additional term corresponds to the torque of the vertically averaged pressure (\citep{Greatbatch1991})
 \end{itemize}
 
 The horizontal components of the vector invariant form of the momentum equation are: (From Geoff's book P64)
 \begin{equation}\label{VIMomentumU}
-    \frac{\partial u}{\partial t} - (f+\zeta)v + w\frac{\partial u}{\partial z} = -\frac{1}{a cos \phi}(\frac{1}{\rho}\frac{\partial p}{\partial \lambda} + \frac{1}{2}\frac{\partial \boldsymbol{u}^2}{\partial \lambda})
+    \frac{\partial u}{\partial t} - (f+\zeta)v + w\frac{\partial u}{\partial z} = -\frac{1}{a cos \phi}(\frac{1}{\rho}\frac{\partial p}{\partial \lambda} + \frac{1}{2}\frac{\partial \mathbf{u}^2}{\partial \lambda})
 \end{equation}
 and
 \begin{equation}\label{VIMomentumV}
-    \frac{\partial v}{\partial t} - (f+\zeta)u + w\frac{\partial v}{\partial z} = -\frac{1}{a}(\frac{1}{\rho}\frac{\partial p}{\partial \phi} + \frac{1}{2}\frac{\partial \boldsymbol{u}^2}{\partial \phi})
+    \frac{\partial v}{\partial t} - (f+\zeta)u + w\frac{\partial v}{\partial z} = -\frac{1}{a}(\frac{1}{\rho}\frac{\partial p}{\partial \phi} + \frac{1}{2}\frac{\partial \mathbf{u}^2}{\partial \phi})
 \end{equation}
 
+We start with the primitive horizontal momentum equations in spherical coordinates:
+\td{Primitive: 3 approximations: (From Geoff's book)}
+\begin{itemize}
+    \item The hydrostatic approximation. In the vertical momentum equation the gravitational term is assumed to be balanced by the pressure gradient term, so that
+        \begin{equation}
+            \frac{\partial p}{\partial z} = -\rho g
+        \end{equation}
+        The advection of vertical veloicyt, the coriolis terms and the metric term $\frac{(u^2 + v^2)}{r}$ are all neglected.
+    \item The shallow-fluid approximation. We write $r=a+z$ where the constant $a$ is the radius of hte Earth and $z$ increases in the radial direction. The coordinate $r$ is hten replaced by $a$ except where it is used as the differentiating argument. Thus, for example,
+        \begin{equation}
+            \frac{1}{r^2}\frac{\partial (r^2 w)}{\partial r} \to \frac{\partial w}{\partial z}
+        \end{equation}
+    \item The traditional approximation. Coriolis terms in the horizontal momentum equations involving the vertical velocity, and the still smaller metric terms $uw/r$ and $vw/r$, are neglected.
+\end{itemize}
+
+Then the governing equations become:
+\begin{equation} \label{PrimMomUMB}
+    \frac{\partial u}{\partial t}=-((\mathbf{u}.\nabla)u - \frac{uv\tan \phi }{a}) + fv - \frac{1}{\rho_0 a \cos \phi}\frac{\partial p}{\partial \lambda} + \frac{1}{\rho_0}\frac{\partial \tau_\lambda}{\partial z} + F_\lambda
+\end{equation}
+\begin{equation} \label{PrimMomVMB}
+    \frac{\partial v}{\partial t}=-((\mathbf{u}.\nabla)v + \frac{u^2\tan \phi }{a}) - fu - \frac{1}{\rho_0 a}\frac{\partial p}{\partial \phi} + \frac{1}{\rho_0}\frac{\partial \tau_\phi}{\partial z} + F_\phi
+\end{equation}
+
+\td{Find a way to label the terms as nonlinear advection, coriolis acceleration, pressure gradient force, vertical diffusion of momentum, and horizontal diffusion of momentum.}\textcolor{magenta}{Maybe find an eqn with the 7 terms I'm using instead!?! have found the 7 terms in nemo - maybe work with this for now and come back to it later.}
+
+\begin{equation} \label{PrimMomUGV}
+    \frac{\partial u}{\partial t}=2\Omega\sin\phi v - (\mathbf{u}.\nabla)u + \frac{uv\tan \phi }{a}) - \frac{1}{\rho_0 a \cos \phi}\frac{\partial p}{\partial \lambda}
+\end{equation}
+\begin{equation} \label{PrimMomVGV}
+    \frac{\partial v}{\partial t}=-2\Omega\sin\phi u - (\mathbf{u}.\nabla)v - \frac{u^2\tan \phi }{a}) - \frac{1}{\rho_0 a}\frac{\partial p}{\partial \phi}
+\end{equation}
+
+
+\td{Make sure to define $\phi$ as going from the equator!!! and $\lambda$ as the azimuth}
 
 
 
