@@ -17,9 +17,17 @@
     \item mean-to-eddy conversion where the mean velocity gradient is the source for eddy generation through instability processes. Implies a down-gradient momentum transport and a deceleration of the mean flow.
     \item eddy-to-mean conversion more counterintuitive as it requires an upgradient momentum transport. The eddies are accelerating the mean flow.
     \item Xie et al 2007 conclude that the isobathic curvature plays a role in enhancing the baroclinic and barotropic energy conversion, whereas the bump provides a local mechanism to maximize the energy transfer rate. 
+    \item Has the full barotropic vorticity balance equation - obtained by integrating the momentum equations in the vertical and cross-differentiating them.
+    \item Bottom pressure torque closely related to the bottom vortex stretching term \citep{Zhang207}
+
 \end{itemize}
 
-\paragraph{Explanation of ???}
+\paragraph{Full barotropic vorticity balance equation}
+Obtained by integrating th emomentum equations in the vertical and cross-differentiating them:
+\begin{equation}
+    \frac{\partial \Omega}{\partial t} = - \nabla . (f\bar{\boldsymbol{u}}) + \frac{\boldsymbol{J}(P_b,h)}{\rho_0} + \boldsymbol{k}.\nabla\times\frac{\tau^{wind}}{\rho_0}-\boldsymbol{k}.\nabla\times\frac{\tau^{bot}}{\rho_0}+\mathcal{D}_\Sigma-A_\Sigma
+\end{equation}
+These terms are: rate, planetary vorticity advection, bottom pressure torque, wind curl, bottom drag curl, horizontal diffusion, Non-linear advection.
 
 
 \end{document}
