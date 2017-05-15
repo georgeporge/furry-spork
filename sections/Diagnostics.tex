@@ -35,9 +35,17 @@ The second diagnostic is obtained by taking the vertical average of the momentum
 	BVA(a) = \frac{\partial \langle\bar{v}\rangle}{\partial x} - \frac{\partial \langle\bar{u}\rangle}{\partial y}
 \end{equation}
 	Using these diagnostics, we can calculate the barotropic \td{and lots of other things}\todo{find out what!!} streamfunction which will help to pinpoint \td{blahblahblah}.
-	\td{Go into each of the contributing factors - put the equation maybe? or at least pick them out from above - look at Mike's paper for help!!}
+\td{Go into each of the contributing factors - put the equation maybe? or at least pick them out from above - look at Mike's paper for help!!}
 
-	ln\_zps\=true : z-coordinate with partial step bathymetry
+ln\_zps\=true : z-coordinate with partial step bathymetry
+
+
+Prognostic Ocean dynamics equations summarised as:
+\begin{equation}
+    NXT = (VOR+KEG+ZAD)+HPG+SPG+LDF+ZDF
+\end{equation}
+    $(VOR+KEG+ZAD)$ are the coriolis \& advection terms. Then the prsesure gradient contributions (HPG - hydrostatic \& SPG - surface pressure), LDF - lateral diffusion \& ZDF - vertical diffusion
+\citep{Madec2011} P102
 
 \subsection{Bottom Pressure Torque}
 \subsection{Vortex Stretching}
