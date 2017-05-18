@@ -1,0 +1,70 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage{subfiles}
+\usepackage{datetime}
+\usepackage{graphicx}
+\usepackage{natbib}
+\usepackage{gensymb}
+\usepackage{titling}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\usepackage{lipsum}
+\usepackage{geometry}
+\usepackage{amsmath}
+\usepackage{setspace}
+\usepackage[colorinlistoftodos]{todonotes}
+
+\colorlet{BLUE}{blue} %to allow \td in headings
+
+\newdateformat{mydate}{%
+    \monthname[\THEMONTH] \THEYEAR%
+    }
+\newcommand{\subtitle}[1]{%
+  \posttitle{%
+    \par\end{center}
+    \begin{center}\large#1\end{center}
+    \vskip0.5em}%
+    }
+\newcommand\td[1]{\textcolor{blue}{#1}}
+\newcommand{\ignore}[1]{}
+
+\pagestyle{fancy}
+
+\title{Understanding and Improving the Path of the Gulf Stream in Moderate Resolution Climate Models}
+\subtitle{End of First Year Report}
+\author{Georgina Long \\ Supervisors: Prof. Beth Wingate \& Dr. Mike Bell}
+\date{\mydate\today}
+
+
+\bibliographystyle{basic}
+\begin{document}
+\onehalfspacing
+\maketitle
+
+
+\subfile{sections/Introduction.tex}
+
+
+\subfile{sections/DynamicsGulfStream.tex}
+
+
+\subfile{sections/ModellingGulfStream.tex}
+
+
+%\subfile{sections/LitReview.tex}
+
+
+\subfile{sections/Diagnostics.tex}
+
+
+\subfile{sections/Questions.tex}
+
+
+%\subfile{sections/Notes.tex}
+
+
+\bibliography{../../../../bibtex/EoFYR}
+%TODO merge bib files
+
+
+\end{document}

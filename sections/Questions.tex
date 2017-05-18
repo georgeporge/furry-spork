@@ -2,81 +2,49 @@
 
 \begin{document}
 
-\section{Future Aims/Questions/Lines of Enquiry \td{update title!}}
+\section{Future Work}
 
-\todo{Merge with next section}
-
-We seek a robust \& accurate Gulf Stream path. How can we improve the representation \& thus understanding of the Gulf Stream?
-
-We seek to improve the understanding and representation of the Gulf Stream in moderate resolution models. As we have discussed, there are many processes involved in the dynamics of the ocean and thus there are many different directions to turn to when seeking solutions to this problem. Here we will focus on the interactions and effects of the bathymetry while being careful not to ignore other paths this investigation may lead down. 
+We have now established the importance of a robust and accurately modelled Gulf Stream, however the path to achieving this is not yet clear.
+We seek to improve the understanding and thus the representation of the Gulf Stream in moderate resolution models. As discussed, there are many processes involved in the dynamics of the ocean and thus there are many different directions to turn to when seeking solutions to this problem. Here we will focus on the interactions and effects of the bathymetry while being careful not to ignore other paths this investigation may lead down. 
 
 \subsection{Identifying key processes}
-\begin{itemize}
-  \item Understanding
-  \item Representation
-\end{itemize}
 
-It is speculated *paper*\todo{female author?} that interaction with the bathymetry creates small-scale turbulence and instabilities which can cause bathymetric steering and divert currents. If this is not being represented in coarser models, the energy behind the turbulence must be going elsewhere. \todo{paper}*paper* compared simulated kinetic energy over different models against measurements taken and noted that in some areas the total kinetic energy was being held higher in the ocean in the models than observed. It is discrepancies \todo{choose a different word} such as this which could have much wider implications. If the energy is not penetrating to the ocean floor, we cannot expect to be able to replicate the effects of the bathymetry. Perhaps pulling this energy further down (closer to observed values), we would be able to see the energy transfer from \todo{?}*** to the turbulence resulting from the bathymetry. 
+%\td{It is speculated *paper*\todo{female author?} that interaction with the bathymetry creates small-scale turbulence and instabilities which can cause bathymetric steering and divert currents. If this is not being represented in coarser models, the energy behind the turbulence must be going elsewhere. \citep{Scott2010} compared simulated kinetic energy over different models against measurements taken and noted that in some areas the total kinetic energy was being held higher in the ocean in the models than observed. 
+%It is discrepancies \todo{choose a different word} such as this which could have much wider implications. If the energy is not penetrating to the ocean floor, we cannot expect to be able to replicate the effects of the bathymetry. Perhaps pulling this energy further down (closer to observed values), we would be able to see the energy transfer from \td{the larger eddies} to the turbulence resulting from the bathymetry. }
 
-Of course as previously discussed there are many processes which could contribute to a Gulf Stream path staying too far South. \citep{Ezer2016b} speculated that amongst other things, the northern branches of the NRG would have to be resolved in order to produce an accurate Gulf Stream. \citep{Zhang2007} determined that a significant contribution to the generation of the NRG is the bottom vortex stretching resulting from a downslope DWBC, which is in turn the result of the interaction with the bathymetry as the DWBC crosses the path of the Gulf Stream. Thus we see that this circles back to interaction with the bathymetry.
+%\td{As previously discussed there are many processes which could contribute to a Gulf Stream path staying too far South. \citep{Ezer2016b} speculated that amongst other things, the northern branches of the NRG would have to be resolved in order to produce an accurate Gulf Stream. \citep{Zhang2007} determined that a significant contribution to the generation of the NRG is the bottom vortex stretching resulting from a downslope DWBC, which is in turn the result of the interaction with the bathymetry as the DWBC crosses the path of the Gulf Stream. Thus we see that this circles back to interaction with the bathymetry.}
+
+The barotripic vorticity diagnostics currently being persued may lead to some intersting findings into the vorticity balances in different model resolutions and configurations. With this insight, we can hope to identify some key areas or processes which could explain the improvements in the representation of the Gulf Stream seen by \citep{Scaife2011} and others when increasing model resolution.
 
 
 \subsection{Different model formulations}
-\begin{itemize}
-  \item Representation of the bathymetry
-  \item Effects of different vertical grids
-\end{itemize}
 
-The many different ocean and OGCM models available allow us to see the effects of many different schemes and parameterisations in use today. In particular the choice of vertical coordinate system has long been discussed, especially in regard to its relevance here. Obviously the representation of the topography and the way it is rendered in the model is a result of the vertical coordinate choice. \citep{Ezer2016b} revisited the discussion in relation to the Gulf Stream separation and used similar models to determine the most accurate results over different choices for coordinate systems. However, the z-coordinate system chosen did not include any partial or shaved cells. It is inherently obvious that using the z-coordinate system would cause the various slopes in the ocean floor to appear as ‘steps’ which would significantly alter the flow around the area. \todo{A diagram of the different coordinate systems?}. It is not so surprising perhaps that under these circumstances \citep{Ezer2016b} found sigma or s-coordinates to be the most realistic given that they allow for a smooth ocean floor. It is perhaps natural then to question the effect of partial or shaved cells on these findings. As NEMO allows for such a diverse range of configurations and schemes, it would be interesting to recreate these results while implementing a z-coordinate system with partial cells to allow for a new take on this review. \todo{Maybe move to the next section instead?}
-
-\subsection{Gulf Stream interaction with other systems}
-\begin{itemize}
-  \item Interaction with other currents   (DWBC, etc.)
-  \item Relationship with data sets
-  \item Evolution of the Gulf Stream
-\end{itemize}
+The many different ocean and OGCM models available allow us to see the effects of many different schemes and parameterisations in use today. In particular the choice of vertical coordinate system has long been discussed, especially in regard to its relevance here. Obviously the representation of the topography and the way it is rendered in the model is a result of the vertical coordinate choice. \citep{Ezer2016b} revisited the discussion in relation to the Gulf Stream separation and used similar models to determine the most accurate results over different choices for coordinate systems. However, the z-coordinate system chosen did not include any partial or shaved cells.
+It is clear that using the z-coordinate system would cause the various slopes in the ocean floor to appear as 'steps' which would significantly alter the flow around the area. It is not so surprising perhaps that under these circumstances \citep{Ezer2016b} found sigma or s-coordinates to be the most realistic given that they allow for a smooth ocean floor. It is perhaps natural then to question the effect of partial or shaved cells on these findings. As NEMO allows for such a diverse range of configurations and schemes, it would be interesting to recreate these results while implementing a z-coordinate system with partial cells to allow for a new take on this review. Indeed that has already been mentioned as a possible extension of the barotropic vorticity diagnostics discussed in section \ref{Diagnostics}.\\
 
 
-
-\section{Lines of Enquiry \& Methodology}
-
-\subsection{NEMO}
-\begin{itemize}
-  \item Model Resolution \citep{Ezer2016b}
-  \begin{itemize}
-    \item simple configurations? \citep{Tansley2001}
-  \end{itemize}
-  \item Representation of Bathymetry
-  \begin{itemize}
-    \item Vertical Coordinate Systems
-    \item Partial Cells
-    \item Nested grids (enhancing resolution in specific areas?) 
-  \end{itemize}
-\end{itemize}
-
-\todo{Diagnostics across different model resolutions and schemes}
-\todo{Can't think of the other thing that was in my head earlier}
-\todo{compare vertical coords?}
-
-To examine the aforementioned interplay between the NRG and the path of the Gulf Stream, a simple configuration of NEMO simulating the double gyre set-up seen by the NRG north of the Gulf Stream and the subropical(?) gyre south of the gulf stream could be used to examine the effects in an idealised model. Results from this could help to influence our investigations within the more realistic models. As \citep{Tansley2001} used the classic problem of flow past a cylinder to understand the Gulf Stream separation, we too can learn from idealised set up and by breaking the problem down to its fundamental aspects.
+As discussed previously and shown by \citep{Zhang2007} and others, the NRG and subtropical gyres either side of the Gulf Stream can have significant effects on the path on the Gulf Stream itself, as well as contributing to the strength of it's transport. 
+To further examine the interplay between the NRG and the path of the Gulf Stream, a simple configuration of NEMO simulating the double gyre seen in the North Atlantic could be used to examine the dynamics in an idealised model. 
+This could be investigated using the barotropic vorticity diagnostic or by other means. In \citep{Zhang2007} it was clear that the correct viscosity was required to attain a realistically-strong gyre, demonstrating that there are various factors to be examined when trying to explain the dynamics.
+Results from this could help to influence analysis within the more realistic models. 
+As \citep{Tansley2001} used the classic problem of flow past a cylinder to understand the Gulf Stream separation, we too can learn from idealised set up and by breaking the problem down to its fundamental aspects.
 
 \subsection{Understanding the Gulf Stream}
-\begin{itemize}
-  \item Turbulence    (\&Geostrophic turbulence)
-  \item Vorticity and it's contributors
-\end{itemize}
   
-It has been discussed previously \todo{here? Or do I need to recite?} that a lack of energy transfer, either by lack of interaction with the bathymetry, or via some other process, could be to blame for the low levels of turbulence found in the area surrounding the separation of the Gulf Stream. As seen when \citep{Tansley2001} used a larger Reynolds number, allowing for more turbulent flow, flow passing a quarter-cylinder (akin to the coastline at Cape Hatteras), formed jet like streams with smaller eddies breaking away  from it. This is akin to satellite observations of the Gulf Stream \todo{could I put a side by side of the two pictures here? Satellite v Tansley/Marshall picture?}. This leads to the question which many try to answer – how can we improve/enhance the turbulence in a model?   
-  
-\subsection{Gulf Stream Relationships}
-\begin{itemize}
-  \item Data Sets    \citep{Ezer2015}
-  \begin{itemize}
-    \item Explore the possible links between the Gulf Stream and other data sets (e.g. coastal sea level)
-  \end{itemize}
-  \item Impact of other currents    \citep{Ezer2015}
-  \item Changes in the Gulf Stream \citep{Greatbatch1991} \citep{Ezer2015}
-\end{itemize}
+It has been discussed in section \ref{DynamicsGulfStream} that a lack of energy transfer, either by lack of interaction with the bathymetry, or via some other process, could be to blame for the low levels of turbulence found in the area surrounding the separation of the Gulf Stream. This is an area which has seen less investigation. Examining the reason for the lack of depth penetration could be an interesting route to go down, though one which requires more thought into how. % \todo{REWORD/REMOVE}
+%As seen when \citep{Tansley2001} used a larger Reynolds number, allowing for more turbulent flow, flow passing a quarter-cylinder (akin to the coastline at Cape Hatteras), formed jet like streams with smaller eddies breaking away  from it. This is akin to satellite observations of the Gulf Stream. This leads to the question which many try to answer how can we improve/enhance the turbulence in a model?   
 
+The evolution of the Gulf Stream is of keen interest for climate models.
+The change of 30Sv between the pentads 1955-59 and 1970-74 discussed by \citep{Greatbatch1991} is understood to be due to a dramatic change in strength of the subtropical gyre. 
+However, global warming brings the threat of a slowdown (or shutdown) of the thermohaline circulation \citep{???}. 
+It is then important that we are able to understand the longer-term evolution of the Gulf Stream and what drives the changes prompting it. 
+This could be investigated using some longer time integrations to gain insight into the overarching adjustments in the dynamics of the North Atlantic. Again this requires more thought but could provide some interesting results.
+
+
+%lans-alpha
+
+
+The search for better comprehension of the dynamics involved in the global ocean dynamics could lead in many directions.
+Ulitmately it is only through improved understanding that we can improve the representation of the Gulf Stream in moderate resolution climate models. 
 
 \end{document}

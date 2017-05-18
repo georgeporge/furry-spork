@@ -2,52 +2,61 @@
 
 \begin{document}
 
-\section{Barotropic Vorticity Diagnostics}
+\section{Barotropic Vorticity Diagnostics} \label{Diagnostics}
 
-Results so far - link into Background \& lead nicely into the next section.
-\subsection{Barotropic vorticity diagnostics}
-\begin{itemize}
-  \item Results so far
-  \item Discussion on results and possible implications
-  \item Results on what we're looking at and why
-  \item Maybe brief description of JEBAR etc. to explain it's use \& who else has used it to show what - e.g. why are we looking at it etc?
-  \item Should probably include model set up
-\end{itemize}
+\subsection{NEMO Ocean Model}
 
-Blhablha don't know how to start this section lalala!
-Using the NEMO model, we are in the process of including some barotropic vorticity diagnostics to further investigate the processes effecting the path of the Gulf Stream. These barotropic vorticity diagnostics have been used by \citep{Bell1991},\citep{Gula???} and \td{other people} to examine \td{who knows what}. The momentum equations in the model are \td{momentum equations and terms}. Two diagnositcs will be calculated on each of the \td{XX} terms. \td{Better wording from Mike's paper: the curl can be taken of the terms in the vertical average/integral of the momentum equations.} \td{Integrate over depth.}
-For each contribution to the momentum equations, we will first calculate the vertical integrals, $\bar{u}$ and $\bar{v}$, over the height of the water column from the depth, $-h$, to the sea surface level $\eta$,
-\begin{equation}
-	\bar{u} = \int_{-h}^{\eta} u dz ,\qquad \bar{v} = \int_{-h}^{\eta} v dz 
-\end {equation}
+As the Barotropic Vorticity Diagnostics are being implemented in the NEMO model, it seems sensible to first introduce the model in a little more detail. \\
+The Nucleus for European Modelling of the Ocean (NEMO) is a framework designed to allow for a flexible study of the ocean, it's dynamics and it's interaction with other climate systems \citep{Madec2011}. \\
 
-We will also calculate the vertical averages $\langle\bar{u}\rangle$ and $\langle\bar{v}\rangle$ over the height of the water column, 
-\begin{equation}
-	\langle\bar{u}\rangle = \frac{1}{\eta + h}\int_{-h}^{\eta}u dz ,\qquad \langle\bar{v}\rangle = \frac{1}{\eta + h}\int_{-h}^{\eta}v dz
-\end{equation}
-The first diagnostic will be obtained by taking \td{the vertical component of}\todo{check this} the curl.
-\td{EQUATION}
-\begin{equation}
-	BVI(a) = \frac{\partial \bar{v}}{\partial x} - \frac{\partial \bar{u}}{\partial y}
-\end{equation}
-The second diagnostic is obtained by taking the vertical average of the momentum contribution over the depth \td{H} of th ocean and then taking \td{the vertical component of}\todo{check this} the curl. \todo{find a better wording of this!}
-\begin{equation}
-	BVA(a) = \frac{\partial \langle\bar{v}\rangle}{\partial x} - \frac{\partial \langle\bar{u}\rangle}{\partial y}
-\end{equation}
-	Using these diagnostics, we can calculate the barotropic \td{and lots of other things}\todo{find out what!!} streamfunction which will help to pinpoint \td{blahblahblah}.
-\td{Go into each of the contributing factors - put the equation maybe? or at least pick them out from above - look at Mike's paper for help!!}
+The framework of NEMO allows the model to be configured in a variety of ways, choosing the resolution, numerical schemes and vertical coordinates according to your requirements. As discussed in section \ref{ModellingGulfStream}, the representation of the Gulf Stream can vary greatly depending on various aspects of the model chosen. The resolution can play a big role as discussed in \citep{Scaife2011}, and \citep{Ezer2016b} showed that path of the Gulf Stream is sensitive also to the choice of vertical coordinates and bathymetrical representation. It is suitable then, for our requirements, as it will allow comparisons between a variety of different configurations in a way which can be problematic for most modellers (as noted in \citep{Ezer2016b}).\\
 
-ln\_zps\=true : z-coordinate with partial step bathymetry
+Within NEMO are many different engines designed to model different aspects of the ocean, these are OPA, which models the ocean dynamics and thermodynamics; LIM, which models the sea-ice dynamics and thermodynamics; and Top, modelling the biogeochemistry. For our purposes we are interested in OPA, which will we will run off the MONSooN super computer.\\
+We can further narrow our interests for the current investigation within OPA down to the routines focusing on the ocean dynamics. This part of the model is located within the DYN directory of the code and is responsible for the momentum equations, which are key to the barotropic vorticity diagnostics and are the focus of this section. \\
+
+The prognostic Prognostic Ocean dynamics equations used by NEMO (where $(NXT)$ stands for the next time step) are 
+\input{Equations/NEMOPrognostic.tex}
+
+Here the Coriolis and advection terms are split into three parts: the vorticity $(VOR)$, the kinetic enery $(KEG)$ and the vertical advection $(ZAD)$.
+In place of the Coriolis and advection terms shown here, in the flux formation, they can be replaced by a coriolis and advection term $(COR + ADV)$, however, for our purposes we wil be using the terms shown in equation (\ref{EQN:NEMOPrognostic}). The pressure gradient contributions consist of the hydrostatic pressure gradient $(HPG)$ and the surface pressure gradient $(SPG)$, and we also have the lateral $(LDF)$ and vertical diffusion $(ZDF)$ terms \citep{Madec2011}.
+%\todo{Put citation elsewhere?}
+
+Currently the diagnostics are being added to a $0.25\degree$ model using the z-coordinate bathymetry with partial setps (shown in Figure \ref{FIG:Coords} (b)).
+Following the successful implementation of these diagnostics in one model formulation in NEMO, the intention is to then compare the results gained from running the calculations across different model resolutions and possibly different choices of vertical coordinates.
+
+This could build on the review by \citep{Ezer2016b} by allowing for a more controlled comparison between models and allow an easier comparison and analysis of the results. Figure \ref{Ezer2016bFig8} (Fig. 8 from \citep{Ezer2016b}) shows the effect that the choice of model grid can have on the balance of the barotropic vorticity budget. With the various available configuration of NEMO, it will be interesting to further investigate this within a more controlled set up.
 
 
-Prognostic Ocean dynamics equations summarised as:
-\begin{equation}
-    NXT = (VOR+KEG+ZAD)+HPG+SPG+LDF+ZDF
-\end{equation}
-    $(VOR+KEG+ZAD)$ are the coriolis \& advection terms. Then the prsesure gradient contributions (HPG - hydrostatic \& SPG - surface pressure), LDF - lateral diffusion \& ZDF - vertical diffusion
-\citep{Madec2011} P102
+\subsection{Barotropic Vorticity Diagnostics}
 
-\subsection{Bottom Pressure Torque}
-\subsection{Vortex Stretching}
+Using the NEMO model, we are in the process of calculating barotropic vorticity diagnostics to further investigate the processes effecting the path of the Gulf Stream. These barotropic vorticity diagnostics have been used by \citep{Bell1999}, \citep{Gula2014} and \citep{Yeager2015} among others, to investigate the driving forces behind the vorticity budgets in the North Atlantic.\\
+
+Two different diagnositcs will be calculated on each of the seven contributing terms to the momentum equations shown in equation (\ref{EQN:NEMOPrognostic}). The methods are similar to the approach taken in section (\ref{EffectsOfTopography}) to find the JEBAR and bottom pressure torque terms and involve taking the curl of the vertically averaged and vertically integrated contributions.\\
+
+New code has been added to the NEMO model 
+%\td{Pending validation?}
+to calculate the two diagnostics. As each contribution to the momentum trend is calculated, it is passed to the subroutine which then calculates the required values.
+
+The subroutine first calculates the vertical integral of the contribution, $\bar{u}$ and $\bar{v}$, over the height of the water column from the depth, $-H$, to the sea surface level $\eta$,
+\input{Equations/UVBar.tex}
+
+and then divide through by the height of the water column to obtain the vertical averages $\langle\bar{u}\rangle$ and $\langle\bar{v}\rangle$,
+\input{Equations/UVAv.tex}
+
+We now take the curl of each of these values to attain the two desired diagnostics
+\input{Equations/IntegratedDiagnostic.tex}
+\input{Equations/AveragedDiagnostic.tex}
+    
+Once the diagnostics have been calculated we can then compare the different contributions as in \citep{Yeager2015} and \citep{Gula2014}. Using equation (\ref{EQN:Streamfunction}) we can also calculate the barotropic streamfunction driving the flow.\\
+
+\begin{figure}[t]
+    \includegraphics[width=\linewidth]{Figures/Ezer2016bFig8.jpg}
+    \caption{Leading terms of the vorticity balance equation at 70$\degree$W after 30 days for experiments: (a) SIG (sigma coordinates), (b) ZLV (z-level coordinates with 21 layers), (c) Z60 (z-level coordinates with 61 layers) and (d) ZNS (z-level coordinates with no continental slope). Note the different scale in each panel. Each term has different color as indicated in (a). (Fig. 8 from \citep{Ezer2016b}) An example of the kind of results available from barotropic vorticity diagnostics.}
+    \label{FIG:Ezer2016bFig8}
+\end{figure}
+
+
+
+
 
 \end{document}
