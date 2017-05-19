@@ -17,20 +17,29 @@ function check_err {
 
 FILE=""
 BIB="FALSE"
+GLOSS="FALSE"
+MESSAGE="Compiled document"
 
-while getopts ":f:b" opt; do
+while getopts "bgf:" opt; do
     case $opt in
         b)
             BIB="TRUE"
+            MESSAGE="$MESSAGE and bibliography"
             ;;
         f)
             FILE=$OPTARG
+            ;;
+        g)
+            GLOSS="TRUE"
+            MESSAGE="$MESSAGE and new glossary"
+            echo GLOSS
             ;;
         \?)
             err "Invalid option -$OPTARG"
             ;;
     esac
 done
+
 
 if [ -z "$FILE" ]
 then
@@ -39,6 +48,15 @@ fi
 
 if [ -f "$FILE"".tex" ]
 then
+    if [ $GLOSS = "TRUE" ]
+    then
+        pdflatex $FILE
+        check_err
+
+        makeglossaries $FILE
+        check_err
+    fi
+
     pdflatex $FILE
     check_err
 
@@ -56,3 +74,5 @@ then
 else
     err "That file doesn't exist silly!"
 fi
+
+echo "$MESSAGE"

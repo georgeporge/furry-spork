@@ -13,6 +13,10 @@
 \usepackage{amsmath}
 \usepackage{setspace}
 \usepackage[colorinlistoftodos]{todonotes}
+\usepackage[acronym,style=super,nonumberlist]{glossaries}
+
+\loadglsentries{other/acronyms.tex}
+\makeglossaries
 
 \colorlet{BLUE}{blue} %to allow \td in headings
 
@@ -27,6 +31,7 @@
     }
 \newcommand\td[1]{\textcolor{blue}{#1}}
 \newcommand{\ignore}[1]{}
+\newcommand*\myacr[2][]{\glsdisp[#1]{#2}{\glsentryshort{#2} (\glsentrylong{#2})}}
 
 \pagestyle{fancy}
 

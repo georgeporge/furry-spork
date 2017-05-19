@@ -1,60 +1,73 @@
-\documentclass[..\EOYR.tex]{subfiles}
+\documentclass[..\report.tex]{subfiles}
 
 \begin{document}
 
 \section{Introduction}
 \label{SEC:Introduction}
 
-Ocean eddies are the subject of many ongoing investigations into ocean dynamics. The topic comprises a broad range of smaller-scale dynamics and relationships at varying scales,
-%. From energy transfer to blah blah *citations*
-with researchers still trying to get a better understanding of the internal dynamics of the ocean. Our main focus will be on the area of the Gulf Stream and mainly the interaction and effect of the bathymetry on the separation and subsequent path of the Gulf Stream.
+Ocean eddies are the subject of many ongoing investigations into ocean dynamics. The topic comprises a broad range of smaller-scale dynamics and relationships at varying scales. By interpreting data and assessing the accuracy of models, scientists aim to get a better understanding of the processes that govern the oceans. \par
+Vast amounts of energy are contained within the ocean and it is still not fully understood how this energy is transported or dissipated into other processes \citep{Nikurashin2012a}. These processes could provide insight into some of the areas that ocean models struggle to accurately represent.\par
+Oceans play an important role in the climate as they transfer heat from warm currents into the atmosphere. Warm currents such as the Gulf Stream are therefore important as they can have significant impacts on the weather \citep{Scaife2011a}. Despite being reasonably well portrayed in high-resolution models, lower-resolution models tend to have a less realistic representation of the Gulf Stream \citep{Zhang2007}.\par
+Our main focus will be the area of the Gulf Stream with an aim to understand the cause of the discrepancy between higher- and lower-resolution models. The leading interest will be the interaction and effect of the bathymetry on the separation and subsequent path of the Gulf Stream.
 
-\subsection{The impact of an accurately resolved Gulf Stream}
+\subsection{The Impact of an Accurately Resolved Gulf Stream}
 \label{SSEC:AccuratelyResolvedGS}
 
-The Gulf Stream is part of the Atlantic meridional overturning circulation (AMOC) and is essential to transferring heat from the Gulf of Mexico at lower latitudes towards western and northern Europe.
-Fundamentally it gives north-western Europe its mild climate and thus has large impacts on the weather as the heat is transferred into the atmosphere.
+The Gulf Stream is part of the \gls{AMOC} and is essential to transferring heat from the Gulf of Mexico at lower latitudes towards western and northern Europe.
+Fundamentally it gives north-western Europe its mild climate and thus has large impacts on the weather, as the heat is transferred into the atmosphere.
 This can have wide ranging effects on weather prediction such as winter blocking \citep{Scaife2011a}.
 %td{I'm sure I read about cyclones somewhere - find citation}.
-Variations in the Gulf Stream have also been linked to flooding on the U.S. east coast caused by the increase in sea surface level \citep{Ezer2015}\ignore{TODO come back to this} with suggestions that flood predictions could be improved with more consideration to the Gulf Stream \citep{Ezer2014}. \par
-It has been identified that the Gulf Stream has evolved over time, with \citep{Greatbatch1991} identifying a weakening of $\sim$30Sv between data from 1955-59 and 1970-74.
+Variations in the Gulf Stream have also been linked to flooding on the U.S. east coast caused by the increase in sea surface level by \citet{Ezer2015} and it has been suggested that flood predictions could be improved with more consideration to the Gulf Stream \citep{Ezer2014}. \par
+It has been identified that the Gulf Stream has evolved over time, with a weakening of $\sim$30Sv between data from 1955-59 and 1970-74 \citep{Greatbatch1991}.
 %\td{Include about shutting down of GS in past.} 
 The dependence on the Gulf Stream for weather gives greater importance to our understanding and ability to predict the changes in the Gulf Stream.
-Many lower resolution models render an unrealistic Gulf Stream, 
+Many lower-resolution models render an unrealistic Gulf Stream, 
 %\ignore{do I need to reference this?}
 with the separation from the U.S. coast too far to the south, causing an inaccurate path from this point onwards.
-This causes knock-on effects as the corresponding sea surface temperatures (SSTs) are higher/lower than observed in the surrounding areas \citep{Greatbatch2004},
+This causes knock-on effects as the corresponding \glspl{SST} are higher/lower than observed in the surrounding areas \citep{Greatbatch2004},
 %\ignore{Maybe include diagram from Greatbatch to show discrepancies/differences}
- and the continuing path of the Gulf Stream is innaccurate from the earlier misrepresentation.
-Given the importance of climate change and research into global warming, accurate representations of SSTs are vital for realistic predictions of the planets climate.
-Among the many processes at play are two gyres, the %TODO CHECK subpolar%
-subpolar 
-northern recirculation gyre (NRG) which lies to the North of the Gulf Stream, and the subtropical gyre to the south of the Gulf Stream. These two gyres contribute to the transport of the Gulf Stream \citep{Hogg1986}, and can be seen to weaken, strengthen or be displaced in response to changing trends in many of the models used to investigate the Gulf Stream and it's related dynamics as in \citep{Greatbatch1991} and \citep{Zhang2007} among others.
+ and the continuing path of the Gulf Stream is inaccurate from the earlier misrepresentation.
+Given the importance of climate change and research into global warming, accurate representations of \glspl{SST} are vital for realistic predictions of the planets climate.
+Among the many processes at play are two gyres, the subpolar \gls{NRG} which lies to the North of the Gulf Stream, and the subtropical gyre to the south of the Gulf Stream. These two gyres contribute to the transport of the Gulf Stream \citep{Hogg1986}, and can be seen to weaken, strengthen or be displaced in response to changing trends in many of the models used to investigate the Gulf Stream and it's related dynamics \citep{Greatbatch1991,Zhang2007}.
 
 
 %\textcolor{gray}{
-%    The most common misrepresentation seems to be a separation from the coast to far south \td{NEEDS a citation}. This results in a cold bias in the north west corner of the Atlantic which has become known to modellers as the "blue spot of death" \citep{Gnanadesikan2007}. \td{Add figure?} \td{Lead into this a bit better - set up the link to the NRG and explain what it is? or leave this bit to later on} The Northern Recirculation Gyre (NRG) interacts with the Gulf Stream and it has been noted by \citep{Zhang2007} and \citep{Ezer2016b}\td{check this citation} that the representation of the Gulf Stream can have large effects on the energy modelled within the NRG\todo{interaction between the two rather than one to the other} \td{\& the subtropical gyre too?}. A lethargic NRG subsequently affects the \td{*blah* find out about this} and hence we can see that a poorly resolved Gulf Stream can have much wider implications throughout the model.} \todo{Remove this?}
+%    The most common misrepresentation seems to be a separation from the coast to far south \td{NEEDS a citation}. This results in a cold bias in the north west corner of the Atlantic which has become known to modellers as the "blue spot of death" \citep{Gnanadesikan2007}. \td{Add figure?} \td{Lead into this a bit better - set up the link to the \gls{NRG} and explain what it is? or leave this bit to later on} The \gls{NRG} interacts with the Gulf Stream and it has been noted by \citep{Zhang2007} and \citep{Ezer2016b}\td{check this citation} that the representation of the Gulf Stream can have large effects on the energy modelled within the \gls{NRG}\todo{interaction between the two rather than one to the other} \td{\& the subtropical gyre too?}. A lethargic \gls{NRG} subsequently affects the \td{*blah* find out about this} and hence we can see that a poorly resolved Gulf Stream can have much wider implications throughout the model.} \todo{Remove this?}
 
 \subsection{Problems and Restrictions}
 \label{SSEC:ProblemsRestrictions}
 
-Higher resolution models have been shown to provide a more realistic Gulf Stream path \citep{Scaife2011a}.
+Higher-resolution models have been shown to provide a more realistic Gulf Stream path \citep{Scaife2011a}.
 %todo find other citations%
 However this comes at a cost requiring more processing power and thus a more expensive model. 
-It is understood \citep{Nikurashin2012a} 
-%todo other citations 
-that this improvement is due to the higher resolution models being able to resolve small-scale processes which are lost in the coarser resolution counterparts. This is discussed further in section \ref{SEC:DynamicsGulfStream}.\\
-\citep{Ezer2016b} suggests that to replicate an accurate Gulf Stream separation, the model not only needs to resolve the Gulf stream but also the northern branches of NRG, the southward slope, and shelf currents.
-%\todo{Could the bathymetry cause an unresolved northern branches of NRG?}.
+It is understood %todo other citations 
+that this improvement is due to the higher-resolution models being able to resolve small-scale processes which are lost in the coarser-resolution counterparts \citep{Nikurashin2012a}. This is discussed further in section \ref{SEC:DynamicsGulfStream}.\\
+\citet{Ezer2016b} suggests that to replicate an accurate Gulf Stream separation, the model not only needs to resolve the Gulf stream but also the northern branches of the \gls{NRG}, the southward slope, and shelf currents.
+%\todo{Could the bathymetry cause an unresolved northern branches of \gls{NRG}?}.
 It is also thought
 %by \todo{citation}
 that the lack of detailed representation of the bathymetry in key areas plays a large role in the unrealistic Gulf Stream path.
 %\todo{citation}
-\citep{Ezer2016b} posed that it is the interaction with the bathymetry and the consequential small-scale processes which cause the Gulf Stream to split off from the coast at Cape Hatteras and direct it's path from there.\\
-The bathymetry itself can be represented in many different ways in the model and the vertical coordinate system chosen has a large impact on the interaction of the ocean dynamics and the ocean floor. We discuss this in more detail in section \ref{SEC:ModellingGulfStream}.
+\citet{Ezer2016b} posed that it is the interaction with the bathymetry and the consequential small-scale processes which cause the Gulf Stream to split off from the coast at Cape Hatteras and direct it's path from there.\\
+The bathymetry itself can be represented in many different ways in the model and the vertical coordinate system chosen has a large impact on the interaction of the ocean dynamics and the ocean floor. This is discussed in more detail in section \ref{SEC:ModellingGulfStream}.
 
 %\textcolor{magenta}{Maybe add in here about scales - the different vertical levels and horizontal scales against the dimensions of the Gulf Stream?? TODO *find citations* 
-The Gulf Stream is $\sim$100km wide and varies from a depth of 800-1200km. Coarser models of 1\degree resolve to 100km per cell while 0.25\degree models resolve $\sim$25km per cell. These scales compared to the $\sim$100km width of the Gulf Stream demonstrate that a higher resolution model should give a clearer representation. This is akin to trying to identify a pixelated image - the higher the resolution, the clearer the picture.
+The Gulf Stream is $\sim$100km wide and varies from a depth of 800-1200km. Coarser models of 1\degree resolve to $\sim$100km per cell while 0.25\degree models resolve $\sim$25km per cell. These scales compared to the $\sim$100km width of the Gulf Stream demonstrate that a higher-resolution model should give a clearer representation. This is akin to trying to identify a pixelated image - the higher the resolution, the clearer the picture.
 %\ignore{ \citep{Ezer2016b} revisited a discussion on different vertical coordinate systems and their effect on the path of the Gulf Stream, though noted that the tested z-coordinate system did not include any partial or shaved cells.}
+
+\subsection{First Steps}
+\label{SSEC:FirstSteps}
+%Ask the science question(s) - explain how to go about answering in and why motivated by the barotropic vorticity equation... AND describe the plan of the report.
+
+Our aim is to provide a better representation of the Gulf Stream in moderate-resolution models, and to alleviate the expense required for accurate results.
+One possible approach to this problem is to seek a parametrisation scheme. This could allow for the effects of rough bathymetry (and the resulting sub-scale processes) to be taken into account without the need of a higher resolution to resolve the bathymetry itself. However, a deeper understanding of the causes and effects involved is required before this is possible.\par
+The first steps are to understand the reasons behind the improvements seen when using higher-resolution models to simulate the Gulf Stream.
+If we can identify a process which significantly contributes towards the improved representation, this will help to narrow down the investigation and direct focus to key areas.\\
+
+\par
+%ROAD MAP
+A background of the dynamics affecting the Gulf Stream is in section \ref{SEC:DynamicsGulfStream} where some important terms are introduced, which are used to analyse the topological affects on ocean flow. Important aspects of ocean modelling are discussed in section \ref{SEC:ModellingGulfStream} which are of interest to the problem. Section \ref{SEC:Diagnostics} introduces the initial investigation using barotropic voricity diagnostics, and section \ref{SEC:FutureWork} highlights some possible areas for future work and potential ideas to pursue. %TODO come back to this.
+
+
 
 \end{document}
