@@ -3,6 +3,7 @@
 \begin{document}
 
 \section{The Dynamics of the Gulf Stream}
+\label{SEC:DynamicsGulfStream}
 
 The Gulf stream separates at Cape Hatteras, skirts the Grand Banks at Newfoundland and then heads Eastwards towards western Europe. However, in many moderate resolution climate models this separation occurs further north than observed and turns more sharply to the East, as noted in \citep{Hurlburt2008} and often misses off the Grand Banks, heading straight towards Europe. This can lead to what modellers refer to as the "blue spot of death" \citep{Gnanadesikan2007}, a patch of colder than observed SSTs resulting from the lack of heat at Newfoundland normally brought up by the Gulf Stream.
 
@@ -12,8 +13,10 @@ The exact cause for the path of the Gulf Stream is unknown, though it has been a
 %\subsection{Subpolar Gyre \& subtropical gyre?}
 
 \subsection{The Effects of topography}
+\label{SSEC:EffectsOfTopography}
 
-\citep{NaveiraGarabato2013} explain the dynamics of the ocean as a balance between the wind stress causing acceleration on the surface against the deceleration of the pressure forces resulting from the bathymetry.
+Ocean dynamics can be explained as a balance between the wind stress causing acceleration on the surface against the deceleration of the pressure forces resulting from the bathymetry \citep{NaveiraGarabato2013}.
+%\citep{NaveiraGarabato2013} explain the dynamics of the ocean as a balance between the wind stress causing acceleration on the surface against the deceleration of the pressure forces resulting from the bathymetry.
 The extent of the impact of topography on ocean dynamics can be seen by examining the difference between flat bottom models and models with realistic bathymetry.
 %\td{Introduce the equations here with bpt and jebar? one of the papers does a really good job of justifying this - maybe greatbatch or gula? include some of the Gula or Yeager figures}
 
@@ -21,14 +24,15 @@ There are many ways to look into these differences, but we will focus mainly on 
 
 
 \subsubsection{The Joint Effect of Baroclinicity and Relief (JEBAR)}
+\label{SSSEC:JEBAR}
 
 The JEBAR term was first introducted to account for the effects of topography and baroclinicity after the unrealistic results yielded from the more traditional flat-bottomed models. \citep{Meyers1996} states that this term is crucial for accurate Gulf Stream separation.
 The term arises from the barotropic vorticity equation after taking the curl of the vertically averaged zonal and meridional flow.
 \par
-We will follow the derivation of the JEBAR and bottom pressure torque terms used in \citep{Greatbatch1991} as it shows the barotropic vorticity equation as a combination of a JEBAR term and a wind term, demonstrating the balance referenced by \citep{NaveiraGarabato2013}
+We will follow the derivation of the JEBAR and bottom pressure torque terms used in \citep{Greatbatch1991} as it reveals the barotropic vorticity equation as a combination of a JEBAR term and a wind term, demonstrating the balance referenced by \citep{NaveiraGarabato2013}
 %\todo{maybe cite someone else? GV?}.
 
-First we introduce the horizontal momentum equations (\ref{EQN:momU}) \& (\ref{EQN:momV}), the hydrostatic relation (\ref{EQN:Hydrostatic}) and the continuity equation (\ref{EQN:Continuity}) determining flow in spherical coordinates
+First we introduce the horizontal momentum equations (\ref{EQN:MomU}) \& (\ref{EQN:MomV}), the hydrostatic relation (\ref{EQN:Hydrostatic}) and the continuity equation (\ref{EQN:Continuity}) determining flow in spherical coordinates
 
 \input{Equations/MomU.tex}
 \input{Equations/MomV.tex}
@@ -55,7 +59,7 @@ Taking the vertical averages of (\ref{EQN:MomU}) and (\ref{EQN:MomV}) gives
 \input{Equations/VAvV.tex}
 where $\left(\tau_\lambda^s, \tau_\phi^s\right)$ and $\left(\tau_\lambda^b, \tau_\phi^b\right)$ are the surface wind stresses and bottom stresses respectively. Following \citep{Greatbatch1991} we take the bottom stress to be zero $\left(\tau_\lambda^b=\tau_\phi^b=0\right)$.\\
 
-Now we multiplying through by $a$ and cross differentiating the vertically integrated momentum equations using
+Now we multiply through by $a$ and cross differentiating the vertically integrated momentum equations using
 \input{Equations/CrossDifferential.tex}
 and substituting for the streamfunction defined in (\ref{EQN:Streamfunction}) and the hydrostatic relation (\ref{EQN:Hydrostatic}) for the pressure terms, yields
 \input{Equations/FullCrossDifferential.tex}
@@ -80,6 +84,7 @@ This representation of the streamfunction driven by two separate forces has lead
 
 
 \subsubsection{Bottom Pressure Torque}
+\label{SSSEC:BPT}
 
 %TODO\td{Intro about bottom pressure torque as for JEBAR}
 We arrive at the bottom pressure torque in similar way to JEBAR, however instead of taking the curl of the vertically averaged flow, we now take the curl of the vertically integrated zonal and meridional flow.
@@ -89,7 +94,7 @@ Vertically integrate the momentum equations (\ref{EQN:MomU}) and (\ref{EQN:MomV}
 \input{Equations/VIntU.tex}
 \input{Equations/VIntV.tex}
 where $p_b$ is the bottom pressure and we take $\tau_\lambda^b=\tau_\phi^b=0$ as before.\\
-Multiplying through by $a$, cross differentiating (taking the curl) of (\ref{EQN:VIntU}) and (\ref{EQN:VIntV}) as in (\ref{EQN:CrossDifferential}), using (\ref{EQN:VintContinuity}) and substituting for the streamfunction defined in (\ref{EQN:Streamfunction}), yields
+Multiplying through by $a$, cross differentiating (taking the curl) of (\ref{EQN:VIntU}) and (\ref{EQN:VIntV}) as in (\ref{EQN:CrossDifferential}), using (\ref{EQN:VIntContinuity}) and substituting for the streamfunction defined in (\ref{EQN:Streamfunction}), yields
 
 \input{Equations/CrossDifferentialVInt.tex}
 %\todo{Understand the terms}
@@ -101,7 +106,7 @@ The first term on the right hand side of this equation corresponds to the bottom
 The second term on the right hand side of (\ref{EQN:CrossDifferentialVInt}) is the surface wind stress.
 
 \citep{Greatbatch1991} show that if the bottom pressure torque in term in (\ref{EQN:CrossDifferentialVInt}) is 0, we are left with the flat-bottomed Sverdrup relation. Thus the bottom pressure torque term accounts for the effects of the bottom topography on the flow. \citep{Greatbatch1991} go on to separate the the streamfunction into two parts, one driven by the bottom pressure torque and the other driven by the flat-bottomed Sverdrup relation.
-\par The impact of the bottom topography is demonstrated well by examining Figure \ref{FIG:Greatbatch1991Fig1Fig5Fig6}, comparing three figures from \citep{Greatbatch1991}. \ref{FIG:Greatbatch1991Fig1Fig5} shows the total streamfunction in a) and then decomposed into the case of no topography, driven only by the flat-bottomed Sverdrup relation in b), and the contribution from the bottom pressure torque term in c). It is evident that although the result is a combination of the terms, there is a significant impact on the transport by the twisting forces resulting from the bottom pressure torque, especially in areas key for the Gulf Stream (such as the area around the Grand Banks).
+\par The impact of the bottom topography is demonstrated well by examining Figure \ref{FIG:Greatbatch1991Fig1Fig5Fig6}, comparing three figures from \citep{Greatbatch1991}. \ref{FIG:Greatbatch1991Fig1Fig5Fig6} shows the total streamfunction in a) and then decomposed into the case of no topography, driven only by the flat-bottomed Sverdrup relation in b), and the contribution from the bottom pressure torque term in c). It is evident that although the result is a combination of the terms, there is a significant impact on the transport by the twisting forces resulting from the bottom pressure torque, especially in areas key for the Gulf Stream (such as the area around the Grand Banks).
 
 \begin{figure}[t]
     \includegraphics[width=\linewidth]{Figures/Greatbatch1991Fig1Fig5Fig6.jpg}
@@ -111,7 +116,10 @@ The second term on the right hand side of (\ref{EQN:CrossDifferentialVInt}) is t
 
 
 
-The bottom pressure torque is important for the separation of the Gulf Stream as \citep{Zhang2007} shoed that the effect of bottom pressure torque with the DWBC has a strong impact on the NRG and thus the dynamics affecting the Gulf Stream.
+It has been shown that the effect of bottom pressure torque with the DWBC has a strong impact on the NRG and thus the dynamics affecting the Gulf Stream \citep{Zhang2007}. Thus when trying to understand the separation of the Gulf Stream it is important to consider the bottom pressure torque.
+%The bottom pressure torque is important for the separation of the Gulf Stream, it has been shown that the effect of bottom pressure torque with the DWBC has a strong impact on the NRG and thus the dynamics affecting the Gulf Stream \citep{Zhang2007}.
+
+%The bottom pressure torque is important for the separation of the Gulf Stream as \citep{Zhang2007} showed that the effect of bottom pressure torque with the DWBC has a strong impact on the NRG and thus the dynamics affecting the Gulf Stream.
 
 
 
@@ -124,6 +132,7 @@ The bottom pressure torque is important for the separation of the Gulf Stream as
 %\subsubsection*{Bototm Vortex Stretching}
 
 \subsection{Small Scale Processes}
+\label{SSEC:SmallScaleProcesses}
 
 It has been noted that in higher resolution models, the separation and subsequent path of the Gulf Stream is much more accurate than in the lower resolution counterparts \citep{Hurlburt2008}\citep{Zhang2007}. This lends to the idea that the processes which affect the Gulf Stream occur on smaller scales which aren't resolved by coarser models \citep{NaveiraGarabato2013}\citep{Nikurashin2012a}. Various processes have been investigated and suggested as the main influences though it is likely that the improved Gulf Stream representation is due to multiple factors.
 
