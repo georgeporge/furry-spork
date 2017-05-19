@@ -1,0 +1,34 @@
+\documentclass[..\Papers.tex]{subfiles}
+
+\begin{document}
+
+\section{Salmon}
+\citep{Salmon}
+
+
+\paragraph{Chapter 13 The Effect of Bottom Topography}
+\begin{itemize}
+    \item Bottom Torque is the first term in the vorticity equation (13.12)
+        \begin{equation}
+            \beta\Psi_x = J(\phi_b,H)-\epsilon\nabla^2\Psi +\nabla.(fH\bar{\bf{u}_E})
+        \end{equation}
+        obtained by cross differentiating the vertical integral of the horizontal momentum equations.
+    \item Bottom torque exists wherever the ocean bottom slopes and the bottom pressuer $\phi_b$ varies along isobaths. Note that:
+        \begin{equation}
+            J(\phi_b,H)=[J(\phi,H)]_b
+        \end{equation}
+        even though $[\nabla\phi]_b \ne \nabla(\phi_b)$.
+        By the hydrostatic relation $\frac{\partial\phi}{\partial z} =\theta$ so we can write the vorticity eqn in a different way. (13.18) which splits the bottom torque over several terms.
+    \item The second term in this represents the part of the bottom torque arising from the baroclinic ($\theta$-dependent) part of the pressure. This vanishes if the fluid is homogenous or the ocean is flat ($H=1$). This term is sometimes called the jebar term (Joint Effect of Baroclinicity And Relief).
+        \begin{equation}
+            JEBAR = J(\frac{1}{H},\gamma)  
+        \end{equation}
+        where $\gamma \equiv -\int_(-H)^0 z\theta dz$ and $J(A,B)\equiv\frac{\partial A}{\partial x}\frac{\partial B}{\partial y} - \frac{\partial A}{\partial y}\frac{\partial B}{\partial x}$ is the horizontal Jacobian operator.
+    \item The jebar term couples the temperature field to the vertically averaged flow. In homogenous fluid ($\theta=0$) jebar vanishes.
+
+\end{itemize}
+
+\paragraph{Full barotropic vorticity balance equation}
+
+
+\end{document}

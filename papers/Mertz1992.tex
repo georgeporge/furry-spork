@@ -1,0 +1,63 @@
+\documentclass[..\Papers.tex]{subfiles}
+
+\begin{document}
+
+\section{Mertz1992}
+\citep{Mertz1992}
+
+
+\begin{itemize}
+    \item Well established that baroclinicity and sloping bottom topography can give rise to a driving force for the depth-averaged flow.
+    \item Clearest expression of JEBAR effect obtained whena vorticity equation is formed from the depth-averaged momentum equations. The JEBAR effect is then represented by a single term 0 the Jacobian of a potential energy anomaly and depth. 
+    \item Clearest physical discussion of JEBAR available is given by Holland (1973) based on teh curl of the depth-integrated momentum equations. In this case JEBAR effect enters implicitly through its influence on the bottom pressuer and associated bottom torque.
+    \item Start with linearized horizontal momentum equations and the continuity equation. Separate velocity into components driven by the pressuer gradient and frictional stress. First approach: depth average the inviscid versions of the momentum equations, then cross differentiate to eliminate the pressure terms. This yields an equation for the rate of change of the vortiicty of the depth-averaged flow.
+    \item Using above, yields:
+        \begin{equation} \label{(4)}
+            \bar{\xi}+H\bar{\bf{u}_p}\cdot\nabla\frac{f}{H}+\frac{f}{H}\nabla\cdot(H\bar{\bf{u}_p})=J(\chi,\frac{1}{H})
+        \end{equation}
+        where $\chi=\frac{g}{\rho_0}\int_(-H)^0z\rho dz$ and $J(A,B)\equiv A_x B_y - B_y A_x$
+        yielding 
+        \begin{equation}
+            JEBAR=J(\chi,\frac{1}{H})
+        \end{equation}
+    \item They then use maths trickery to eliminate the divergence term from \ref{(4)} yielding:
+        \begin{equation}
+            \xi+\bar{\bf{u}_p}\cdot\nabla f-\frac{f}{H}\bar{\bf{u}_p}\cdot\nabla H = \frac{f}{H}curl_z[\frac{\bf{S}_s-\bf{S}_b}{\rho_0 f} + J(\chi,\frac{1}{H})
+        \end{equation}
+        Relating to the change of the vorticity of the depth-averaged flow to the transport across contours of constant planetary vorticity (second term on LHS), topographic vortex stretching (3rd term on LHS), surface forcing and bottom damping (1st term on RHS) and JEBAR (2nd term on RHS). This is equivalent to that of a homogenous fluid, except for the JEBAR term - which is a manifestation of the baroclinicity of the fluid.
+    \item 
+    \item So far interpretation of JEBAR has been as a correction to the topographic vortex-stretching term in the depth-averaged vorticity equation.
+    \item Can also interpret JEBAR by relating it to the bottom torque - the curl of the horizontal force exerted by the bottom on the fluid.
+
+\end{itemize}
+
+\paragraph{Depth-integral version - JEBAR as torque}
+Define a streamfunction $\Psi$ such that,
+\begin{equation}
+    \Psi_x = \int_(-H)^0 v dz,\\quad -\Psi_y = \int_(-H)^0 u dz
+\end{equation}
+and depth integrate the linearized momentum equations governing the horizontal velocities:
+\begin{equation}\label{(1)}
+    u_t-fv=-\frac{1}{\rho_0}p_x+\frac{1}{\rho_0}\frac{\partial}{\partial z}\tau^((x))
+\end{equation}
+\begin{equation}\label{(2)}
+    u_t+fu=-\frac{1}{\rho_0}p_y+\frac{1}{\rho_0}\frac{\partial}{\partial z}\tau^((y))
+\end{equation}
+So vertically integrate \ref{(1)} and \ref{(2)} and cross-differentiate to obtain:
+\begin{equation}\label{(14)}
+    \nabla\cdot\nabla\Psi_t+J(\Psi,f)=\frac{1}{\rho_0}J(p_b,H)+curl_z[\frac{\tau_s-\tau_b}{\rho_0}]
+\end{equation}
+
+This is exactly the same form as for a homogeneous or stratified fuid. The first term on RHS is the topographic torque term. Rewriting it as 
+\begin{equation}
+    \frac{1}{\rho_0}curl_z(p_b\nabla H)
+\end{equation}
+emphasises that it's the curl of the horizontal component of the force normal to the bottom exerted by the bottom on the fluid. \\ 
+To relate bottom torque to JEBAR, use (11) to show:
+\begin{equation}
+    \frac{1}{\rho_0}curl_z(p_b\nabla H) = \frac{1}{\rho_0}curl_z(\bar{p}\nabla H)-curl_z[\frac{\chi \nabla H}{H}]
+\end{equation}
+
+
+
+\end{document}

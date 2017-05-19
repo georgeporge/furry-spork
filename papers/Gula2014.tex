@@ -19,13 +19,19 @@
     \item Xie et al 2007 conclude that the isobathic curvature plays a role in enhancing the baroclinic and barotropic energy conversion, whereas the bump provides a local mechanism to maximize the energy transfer rate. 
     \item Has the full barotropic vorticity balance equation - obtained by integrating the momentum equations in the vertical and cross-differentiating them.
     \item Bottom pressure torque closely related to the bottom vortex stretching term \citep{Zhang207}
+    \item - "Make use of the relation between bottom pressure anomalies and bottom pressure torque $J(P_b,h)$ - the Jacobian of the bottom pressure and the detph of the topography $h$. For a terrain following model like ROMS \td{Maybe some of the NEMO sigma coords?} the bottom torque can be computed exactly by taking the curl of the vertically integrated horizontal pressure gradient. From the torque we can find ta pressure anomaly along a contour line of fixed topography depth using $p_b=-\int\frac{J(P_b,h)}{\partial h/\partial n}ds$ (n,s) are the right handed horizontal coordinates with s as teh distance along a contour. $\partial h/\partial n$ is the local slope.\\
+    \item - "The bottom pressure torque $J(P_b,h)$ arises from variation of bottom pressure along isobaths. It derives from the twisting of the force that the bottom topography exerts on the ocean.
+    \item - Use Fig 13 - showing mean bottom pressure torque - "The signal strongly reflects the bottom pressure torque"\ldots "The large negative signal where teh tstream encounters teh tip of the bup corresponds to the incoming flow going uphill. There are two large positive signals downstream on both sides of the stream where the flow is locally going downhill, followed by smaller negative signals where the flow is going uphill again."
+    \item - "The bottom pressure torque represents the contribution of the topography to the barotropic vorticity evolution of the flow."\ldots "The bottom pressure torque is the term locally enabling the return flow of the wind-driven transport in western boundary currents and providing most of the overall positive input of vorticity balancing the negative input by anticyclonic wind culr on the scale of the gyre."
+    \item - Locally a very large cancellation between the bottom pressure torque and the nonlinear advection terms - "This results from the balance between pressure forces and inertia around small-scale topographic features."
+    \item - dominant terms are the bottom pressure torque, nonlinear advection, bottom drag curl and planetarty vorticity advection. The other terms (rate of change of vorticity, horizontal diffusion and wind stress curl) are all at least an order of magnitude smaller compared to the others.
 
 \end{itemize}
 
 \paragraph{Full barotropic vorticity balance equation}
 Obtained by integrating th emomentum equations in the vertical and cross-differentiating them:
 \begin{equation}
-    \frac{\partial \Omega}{\partial t} = - \nabla . (f\bar{\boldsymbol{u}}) + \frac{\boldsymbol{J}(P_b,h)}{\rho_0} + \boldsymbol{k}.\nabla\times\frac{\tau^{wind}}{\rho_0}-\boldsymbol{k}.\nabla\times\frac{\tau^{bot}}{\rho_0}+\mathcal{D}_\Sigma-A_\Sigma
+    \frac{\partial \Omega}{\partial t} = - \nabla . (f\bar{\bf{u}}) + \frac{\bf{J}(P_b,h)}{\rho_0} + {\bf{k}}.\nabla\times\frac{\tau^{wind}}{\rho_0}-{\bf{k}}.\nabla\times\frac{\tau^{bot}}{\rho_0}+\mathcal{D}_\Sigma-A_\Sigma
 \end{equation}
 These terms are: rate, planetary vorticity advection, bottom pressure torque, wind curl, bottom drag curl, horizontal diffusion, Non-linear advection.
 
